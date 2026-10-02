@@ -1,0 +1,538 @@
+/* ================================
+   CONFIGURAÇÕES GERAIS
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --verde: #006437;
+    --verde-escuro: #003b24;
+    --verde-claro: #008f55;
+    --dourado: #d4af37;
+    --branco: #ffffff;
+    --cinza: #d7ddd9;
+    --fundo: #06150f;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: var(--branco);
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(0, 143, 85, 0.20),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(0, 100, 55, 0.18),
+            transparent 35%
+        ),
+        var(--fundo);
+}
+
+
+/* ================================
+   PÁGINA PRINCIPAL
+================================ */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 80px;
+
+    padding: 70px 10%;
+
+    overflow: hidden;
+}
+
+
+.hero-content {
+    max-width: 650px;
+
+    animation: aparecer 0.8s ease;
+}
+
+
+.subtitulo {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color: var(--dourado);
+
+    font-size: 14px;
+    font-weight: bold;
+
+    letter-spacing: 4px;
+}
+
+
+.hero h1 {
+    margin-bottom: 25px;
+
+    font-size: clamp(40px, 5vw, 70px);
+
+    line-height: 1.05;
+
+    color: white;
+}
+
+
+.hero p {
+    max-width: 620px;
+
+    margin-bottom: 35px;
+
+    color: var(--cinza);
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* ================================
+   BOTÕES
+================================ */
+
+.botoes {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+}
+
+
+.btn {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 130px;
+
+    padding: 13px 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.btn:hover {
+    transform: translateY(-4px);
+
+    background: var(--verde);
+
+    border-color: rgba(212, 175, 55, 0.6);
+
+    box-shadow:
+        0 8px 25px rgba(0, 100, 55, 0.35);
+}
+
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+
+.btn.destaque {
+    background: var(--verde);
+
+    border-color: var(--verde-claro);
+}
+
+
+.btn.destaque:hover {
+    background: var(--verde-claro);
+}
+
+
+/* ================================
+   ESCUDO
+================================ */
+
+.escudo-container {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 400px;
+    height: 400px;
+
+    flex-shrink: 0;
+}
+
+
+.escudo-container::before {
+    content: "";
+
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 100, 55, 0.18);
+
+    box-shadow:
+        0 0 80px rgba(0, 143, 85, 0.25);
+
+    animation: pulsar 4s ease-in-out infinite;
+}
+
+
+.escudo {
+    position: relative;
+
+    width: 330px;
+    max-width: 100%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 20px 25px rgba(0, 0, 0, 0.5));
+
+    animation: flutuar 4s ease-in-out infinite;
+
+    transition: transform 0.4s ease;
+}
+
+
+.escudo:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+
+/* ================================
+   PÁGINA DE JOGADORES
+================================ */
+
+.pagina-jogadores {
+    width: min(1100px, 90%);
+
+    margin: auto;
+
+    padding: 70px 0;
+}
+
+
+.topo-jogadores {
+    margin-bottom: 50px;
+
+    text-align: center;
+}
+
+
+.Titulo_jogadores {
+    margin-bottom: 20px;
+
+    font-size: clamp(35px, 5vw, 55px);
+}
+
+
+.topo-jogadores p {
+    max-width: 750px;
+
+    margin: auto;
+
+    color: var(--cinza);
+
+    line-height: 1.7;
+
+    font-size: 16px;
+}
+
+
+/* ================================
+   GRUPOS
+================================ */
+
+.grupo-jogadores {
+    margin-bottom: 35px;
+
+    padding: 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.grupo-jogadores:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(0, 143, 85, 0.45);
+}
+
+
+.grupo-jogadores h2 {
+    margin-bottom: 18px;
+
+    padding-bottom: 13px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    font-size: 22px;
+
+    color: var(--dourado);
+}
+
+
+/* ================================
+   LISTA DE JOGADORES
+================================ */
+
+.lista-jogadores {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 10px;
+}
+
+
+.jogador {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    min-height: 52px;
+
+    padding: 12px 15px;
+
+    border-radius: 8px;
+
+    background: rgba(0, 0, 0, 0.18);
+
+    color: #eeeeee;
+
+    font-size: 15px;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        padding-left 0.2s ease;
+}
+
+
+.jogador:hover {
+    transform: translateX(5px);
+
+    padding-left: 20px;
+
+    background: rgba(0, 100, 55, 0.35);
+}
+
+
+.numero {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    border-radius: 6px;
+
+    background: var(--verde);
+
+    color: white;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* ================================
+   BOTÃO VOLTAR
+================================ */
+
+.voltar {
+    margin-top: 15px;
+}
+
+
+/* ================================
+   ANIMAÇÕES
+================================ */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes flutuar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+@keyframes pulsar {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+
+}
+
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+
+@media (max-width: 850px) {
+
+    .hero {
+        flex-direction: column;
+
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 60px 6%;
+
+        gap: 40px;
+    }
+
+
+    .hero-content {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    .hero p {
+        font-size: 16px;
+    }
+
+
+    .botoes {
+        justify-content: center;
+    }
+
+
+    .escudo-container {
+        width: 280px;
+        height: 280px;
+    }
+
+
+    .escudo-container::before {
+        width: 240px;
+        height: 240px;
+    }
+
+
+    .escudo {
+        width: 230px;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .pagina-jogadores {
+        width: 92%;
+
+        padding: 45px 0;
+    }
+
+
+    .grupo-jogadores {
+        padding: 18px;
+    }
+
+
+    .lista-jogadores {
+        grid-template-columns: 1fr;
+    }
+
+
+    .botoes {
+        width: 100%;
+    }
+
+
+    .btn {
+        width: 100%;
+    }
+
+}
